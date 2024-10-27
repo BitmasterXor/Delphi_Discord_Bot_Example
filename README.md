@@ -17,18 +17,11 @@
 
 <h2>Installation</h2>
 <ol>
-  <li><strong>YOU MUST HAVE SGCWebsockets installed:</strong> They can be obtained from here: https://www.esegece.com</li>
+  <li><strong>YOU MUST HAVE SGCWebsockets installed!!!!!!! IMPORTANT:</strong> They can be obtained from here: https://www.esegece.com</li>
   <li><strong>Clone the Repository:</strong> Use the command `git clone https://github.com/yourusername/Delphi_Discord_Bot_Example.git`.</li>
   <li><strong>Open Delphi Project:</strong> Open the `.dpr` file in the Delphi IDE.</li>
   <li><strong>Compile:</strong> Build the project to generate the executable.</li>
   <li><strong>Run:</strong> Execute the application to start using the bot.</li>
-</ol>
-
-<h2>Usage</h2>
-<ol>
-  <li><strong>Launch the Application:</strong> Run the tool from Delphi or the generated executable.</li>
-  <li><strong>Send a Message:</strong> Enter the message content, specify the channel ID, and click the "Send Message" button.</li>
-  <li><strong>Fetch Messages:</strong> Enter the channel ID and click the "Fetch Messages" button to retrieve and display messages from that channel.</li>
 </ol>
 
 <h2>Contributing</h2>
