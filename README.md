@@ -4,7 +4,7 @@
 
 <!-- Replace 'Preview.gif' with the path to your actual image file -->
 <p align="center">
-  <img src="Preview.gif" alt="Screenshot of the Delphi Discord Bot Example" style="max-width:100%; height:auto;">
+  <img src="Preview.png" alt="Screenshot of the Delphi Discord Bot Example" style="max-width:100%; height:auto;">
 </p>
 
 <h2>Features</h2>
