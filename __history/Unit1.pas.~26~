@@ -1,0 +1,95 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, sgcWebSocket_Classes,
+  sgcWebSocket_Classes_Indy, sgcWebSocket_Client, sgcWebSocket, sgcBase_Classes,
+  sgcSocket_Classes, sgcTCP_Classes, sgcWebSocket_API_Discord,
+  sgcWebSocket_APIs,
+  Vcl.StdCtrls, sgcWebSocket_Classes_WinHTTP, sgcWebSocket_Client_WinHTTP,
+  iotcore, iottypes, iotjson;
+
+type
+  TForm1 = class(TForm)
+    sgcWSAPI_Discord1: TsgcWSAPI_Discord;
+    Button1: TButton;
+    sgcWebSocketClient1: TsgcWebSocketClient;
+    Memo1: TMemo;
+    GroupBox1: TGroupBox;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    Label2: TLabel;
+    Edit3: TEdit;
+    Label3: TLabel;
+    Label4: TLabel;
+    Edit4: TEdit;
+    Button2: TButton;
+    json1: TiotJSON;
+    procedure Button1Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure sgcWSAPI_Discord1DiscordDispatch(Sender: TObject;
+      const Event, RawData: string);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.Button1Click(Sender: TObject);
+begin
+self.Button1.Enabled:=false;
+  try
+    Memo1.Lines.Add(self.sgcWSAPI_Discord1.POST_Request('/channels/' + self.Edit4.text + '/messages', '{"content":"' + self.Edit3.text + '"}'));
+  except
+    on E: exception do
+    begin
+    showmessage('you must type a message to send!');
+    end;
+  end;
+  self.Button1.Enabled:=true;
+end;
+
+procedure TForm1.Button2Click(Sender: TObject);
+var
+  commandstring: string;
+begin
+  Memo1.Lines.Clear;
+  Memo1.Lines.Add(self.sgcWSAPI_Discord1.GET_Request('/channels/' + Edit4.text +
+    '/messages/' + '1201205973642133585'));
+  commandstring := self.Memo1.text;
+
+  if commandstring.Contains('./command') then
+  begin
+    Memo1.Lines.Add(self.sgcWSAPI_Discord1.POST_Request('/channels/' +
+      self.Edit4.text + '/messages', '{"content":"' +
+      'You Requested Help Menu!' + '"}'));
+  end;
+
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+  Memo1.Clear;
+  sgcWSAPI_Discord1.DiscordOptions.BotOptions.Token := self.Edit1.text;
+  self.sgcWSAPI_Discord1.DiscordOptions.BotOptions.BotName := self.Edit2.text;
+end;
+
+procedure TForm1.sgcWSAPI_Discord1DiscordDispatch(Sender: TObject;
+  const Event, RawData: string);
+begin
+  showmessage(Event);
+end;
+
+end.
