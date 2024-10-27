@@ -24,6 +24,11 @@
   <li><strong>Run:</strong> Execute the application to start using the bot.</li>
 </ol>
 
+<h2>Usage</h2>
+<ol>
+  <li><strong>.DLL's are important libeay32.dll and ssleay32.dll must reside in .exe run location</strong> SGCWebsocket components must be installed to compile this project!</li>
+</ol>
+
 <h2>Contributing</h2>
 <p>Contributions are welcome! If you have suggestions or bug fixes, please fork the repository and submit a pull request.</p>
 
