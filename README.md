@@ -18,7 +18,6 @@
 <h2>Installation</h2>
 <ol>
   <li><strong>YOU MUST HAVE SGCWebsockets installed!!!!!!! IMPORTANT:</strong> They can be obtained from here: https://www.esegece.com</li>
-  <li><strong>Clone the Repository:</strong> Use the command `git clone https://github.com/yourusername/Delphi_Discord_Bot_Example.git`.</li>
   <li><strong>Open Delphi Project:</strong> Open the `.dpr` file in the Delphi IDE.</li>
   <li><strong>Compile:</strong> Build the project to generate the executable.</li>
   <li><strong>Run:</strong> Execute the application to start using the bot.</li>
