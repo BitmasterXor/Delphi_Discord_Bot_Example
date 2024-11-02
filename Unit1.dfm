@@ -3,9 +3,9 @@ object Form1: TForm1
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
-  Caption = 'Delphi Discord Bot Example (BitmasterXor)'
+  Caption = 'Delphi Discord Bot Example!'
   ClientHeight = 397
-  ClientWidth = 364
+  ClientWidth = 368
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText

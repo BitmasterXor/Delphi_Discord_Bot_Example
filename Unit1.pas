@@ -47,6 +47,9 @@ implementation
 // Sends a message to a Discord channel when Button1 is clicked
 procedure TForm1.Button1Click(Sender: TObject);
 begin
+ sgcWSAPI_Discord1.DiscordOptions.BotOptions.Token := self.Edit1.text;
+ self.sgcWSAPI_Discord1.DiscordOptions.BotOptions.BotName := self.Edit2.text;
+
   self.Button1.Enabled := false; // Disable the button to prevent multiple clicks
   try
     // Send a POST request with the message content to the specified channel
@@ -54,7 +57,7 @@ begin
   except
     on E: Exception do // Handle exceptions
     begin
-      showmessage('You must type a message to send!'); // Alert user if no message is typed or some other issue happend with the API request!
+      showmessage(E.Message); // Alert user if no message is typed or some other issue happend with the API request!
     end;
   end;
   self.Button1.Enabled := true; // Re-enable the button after processing
@@ -67,7 +70,7 @@ var
 begin
   Memo1.Lines.Clear; // Clear previous messages
   // Send a GET request to retrieve specific messages from the channel
-  Memo1.Lines.Add(self.sgcWSAPI_Discord1.GET_Request('/channels/' + Edit4.text + '/messages/' + '1201205973642133585'));//Example Channel ID 1201205973642133585 PUT YOUR OWN!
+  Memo1.Lines.Add(self.sgcWSAPI_Discord1.GET_Request('/channels/' + Edit4.Text + '/messages'));//Example Channel ID 1201205973642133585 PUT YOUR OWN!
   commandstring := self.Memo1.text; // Store the fetched messages
 
   // Check if the fetched messages contain a specific command
